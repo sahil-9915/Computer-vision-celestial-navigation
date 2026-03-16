@@ -1,8 +1,6 @@
 # Zenith Star Trail Latitude Finder
 
-Determine your geographic latitude purely from a long-exposure star trail photograph taken with the camera pointed straight up (toward the zenith). No GPS, no horizon reference, no star catalogue required — just geometry. The image shown is artificially generated using the specified setup (Nikon D90, 10mm) at Freiburg im Breisgau (48.0° latitude).
-
----
+Determine your geographic latitude purely from a long-exposure star trail photograph taken with the camera pointed straight up (toward the zenith). No GPS, no horizon reference, no star catalogue required — just geometry. The image shown is artificially generated (partially using AI to make it realistic) using the specified setup (Nikon D90, 10mm) at Freiburg im Breisgau (48.0° latitude).
 
 ## How It Works
 
@@ -56,8 +54,13 @@ HEMISPHERE      = 'north'                     # 'north' or 'south'
 ACTUAL_LATITUDE = 48.0                        # known latitude for comparison (optional)
 ```
 
+2. Run:
 
-2. The script prints results to the console and opens a three-panel diagnostic plot:
+```bash
+python Zenith_star_trails.py
+```
+
+3. The script prints results to the console and opens a three-panel diagnostic plot:
    - Original image
    - Edge map
    - Fitted circles overlaid, with zenith (cyan), pole (red), and the connecting line (orange)
@@ -136,14 +139,16 @@ Common pixel sizes for other cameras:
 ```
 .
 ├── Zenith_star_trails.ipynb   # Jupyter notebook (recommended entry point)
+├── Zenith_star_trails.py      # Python script (CLI)
 ├── Zenith_star_trails.jpg     # Sample image (Nikon D90, 10mm, ~48°N)
 └── README.md
 ```
 
-The included sample image is a long-exposure zenith shot suitable for testing the pipeline out of the box. Open `Zenith_star_trails.ipynb` to run interactively with inline plots.
+The included sample image is a generated long-exposure zenith shot suitable for testing the pipeline out of the box. Open `Zenith_star_trails.ipynb` to run interactively with inline plots, or run `Zenith_star_trails.py` directly from the command line.
 
 ---
 
 ## License
 
 MIT
+
