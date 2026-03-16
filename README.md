@@ -1,6 +1,6 @@
 # Zenith Star Trail Latitude Finder
 
-Determine your geographic latitude purely from a long-exposure star trail photograph taken with the camera pointed straight up (toward the zenith). No GPS, no horizon reference, no star catalogue required — just geometry.
+Determine your geographic latitude purely from a long-exposure star trail photograph taken with the camera pointed straight up (toward the zenith). No GPS, no horizon reference, no star catalogue required — just geometry. The image shown is artificially generated using the specified setup (Nikon D90, 10mm) at Freiburg im Breisgau (48.0° latitude).
 
 ---
 
@@ -140,7 +140,7 @@ Common pixel sizes for other cameras:
 └── README.md
 ```
 
-The included sample image is a long-exposure zenith shot suitable for testing the pipeline out of the box. Open `Zenith_star_trails.ipynb` to run interactively with inline plots, or run `zenith_latitude.py` directly from the command line.
+The included sample image is a long-exposure zenith shot suitable for testing the pipeline out of the box. Open `Zenith_star_trails.ipynb` to run interactively with inline plots.
 
 ---
 
