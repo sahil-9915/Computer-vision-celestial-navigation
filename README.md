@@ -40,6 +40,12 @@ pip install opencv-python numpy scipy matplotlib
 
 ## Usage
 
+### Jupyter Notebook (recommended)
+
+Open `Zenith_star_trails.ipynb` and edit the settings cell at the top, then run all cells. Plots render inline.
+
+### Command line
+
 1. Edit the settings block at the top of the script:
 
 ```python
@@ -50,13 +56,8 @@ HEMISPHERE      = 'north'                     # 'north' or 'south'
 ACTUAL_LATITUDE = 48.0                        # known latitude for comparison (optional)
 ```
 
-2. Run:
 
-```bash
-python zenith_latitude.py
-```
-
-3. The script prints results to the console and opens a three-panel diagnostic plot:
+2. The script prints results to the console and opens a three-panel diagnostic plot:
    - Original image
    - Edge map
    - Fitted circles overlaid, with zenith (cyan), pole (red), and the connecting line (orange)
@@ -100,6 +101,16 @@ Arcs used         : 47
 
 ---
 
+## Accuracy & Limitations
+
+| Source | Typical effect |
+|--------|---------------|
+| Camera tilt from vertical | ~1° per degree of tilt — dominant error |
+| Focal length / pixel size uncertainty | Scales linearly; 1% error → ~0.4° latitude error |
+| Short or clipped arcs | Arcs cut by the image boundary constrain the circle centre poorly |
+| Few arcs | Minimum 3 valid fits required; more arcs → lower pole uncertainty |
+
+Realistic accuracy on a well-levelled real photograph: **±0.5° – 2°** depending on exposure length and sky quality.
 
 ---
 
@@ -124,9 +135,12 @@ Common pixel sizes for other cameras:
 
 ```
 .
-├── zenith_latitude.py   # Main script
+├── Zenith_star_trails.ipynb   # Jupyter notebook (recommended entry point)
+├── Zenith_star_trails.jpg     # Sample image (Nikon D90, 10mm, ~48°N)
 └── README.md
 ```
+
+The included sample image is a long-exposure zenith shot suitable for testing the pipeline out of the box. Open `Zenith_star_trails.ipynb` to run interactively with inline plots, or run `zenith_latitude.py` directly from the command line.
 
 ---
 
