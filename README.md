@@ -134,7 +134,7 @@ Common pixel sizes for other cameras:
 
 ---
 
-## File Structure
+## Repository Structure
 
 ```
 .
